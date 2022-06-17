@@ -1,0 +1,47 @@
+@import '../variables.scss';
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  .logo {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}
+
+.hero {
+  display: flex;
+  justify-self: space-between;
+  align-items: center;
+  min-height: 60vh;
+
+  &__title {
+    font-size: 6rem;
+    font-weight: bold;
+    color: $primary;
+  }
+
+  &__subtitle {
+    font-size: 1.8rem;
+    // font-weight: bold;
+    color: $secondary;
+    line-height: 1.5;
+  }
+
+  &__image {
+    flex: 0 0 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+}
