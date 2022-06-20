@@ -1,0 +1,36 @@
+@import '../variables.scss';
+
+.sidebar {
+  
+  min-height: 100vh;
+  height: 100%;
+  // background-color: aquamarine;
+  width: 250px;
+  border-right: 1px solid #adaaaa;
+
+  .content {
+    padding-left: 2rem;
+    margin-top: 2rem;
+  }
+
+  .sidebar-list {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      color: black;
+      text-decoration: none;
+      font-size: 2rem;
+      display: inline-block;
+      padding: 1rem;
+    }
+  }
+
+  .logo {
+    font-size: 4rem;
+    margin: 5rem 0;
+    color: $primary;
+    font-weight: bold;
+  }
+}

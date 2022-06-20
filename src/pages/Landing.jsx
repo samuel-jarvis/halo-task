@@ -1,14 +1,31 @@
 import '../styles/pages/landing.scss'
 import hero from '../assets/hero.png'
 import React from 'react'
+import {Link} from 'react-router-dom'
+
+import { useAuthContext } from '../hooks/useAuthContext'
 
 
 export default function Landing() {
+  const {user} = useAuthContext()
+  console.log(user)
+
   return (
     <div>
       <nav className="nav px">
         <div className="logo">Halo-Task</div>
-        <a href="https://www.google.com" className='btn--cta'>Sign In</a>
+
+        {!user && (
+          <Link className='btn--cta' to='/login'>Login</Link>
+        )}
+
+        {user && (
+          <>
+            <p className='username'>Hello {user.displayName}</p>
+            <Link className='btn--cta' to='/dashboard'>Dashboard</Link>
+          </>
+        )}
+
       </nav>
 
       <div className="hero px">
@@ -17,7 +34,7 @@ export default function Landing() {
           <p className="hero__subtitle">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas possimus autem corporis a odit.
            </p>
-          <a href="/" className='btn--main'>Sign Up</a>
+          <Link to='/signup' className='btn--main'>Get Started</Link>
         </div>
 
         <div className="hero__image">

@@ -3,13 +3,21 @@
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   padding-top: 4rem;
   padding-bottom: 4rem;
+  align-items: center;
 
   .logo {
     font-size: 3rem;
     font-weight: bold;
+    margin-right: auto;
+  }
+
+  .username {
+    font-size: 1.8rem;
+    color: $primary;
+    margin-right: 1rem;
   }
 }
 

@@ -1,0 +1,12 @@
+@import '../variables.scss';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  font-size: 1.8rem;
+  // background-color: white;
+  margin: 2rem;
+  border-radius: 10px;
+}

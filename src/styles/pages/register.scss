@@ -1,1 +1,62 @@
 @import '../variables.scss';
+
+.form-wrapper {
+  display: grid;
+  align-items: center;
+}
+
+
+
+.form-type {
+  color: $secondary;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.form {
+  max-width: 450px;
+  background-color: white;
+  margin: 3rem auto;
+  padding: 2rem 4rem;
+  width: 90vw;
+  border-top: 5px solid $secondary;
+  border-radius: 5px;
+
+  .logo {
+    font-size: 2rem;
+    text-align: center;
+    color: $primary;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+form {
+
+  span {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 2rem;
+  }
+}
+
+.prompt {
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 1.4rem;
+}

@@ -1,1 +1,9 @@
 @import '../variables.scss';
+
+.main {
+  display: flex;
+
+  .section {
+    flex: 1;
+  }
+}
