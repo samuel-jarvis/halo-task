@@ -1,0 +1,55 @@
+@import '../variables.scss';
+
+.form-wrapper {
+  background-color: white;
+  margin-top: 4rem;
+  padding: 2rem 4rem;
+  border-radius: 5px;
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 4rem;
+    color: $primary;
+  }
+
+  label {
+    font-size: 1.6rem;
+    display: block;
+    padding-bottom: 1rem;
+    color: $primary;
+  }
+
+  input {
+    font-weight: bold;
+  }
+}
+
+.form-group--flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+input[type=checkbox] {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  margin-left: .5rem;
+}
+
+input[type=submit] {
+  background-color: $secondary;
+  color: white;
+  border: none;
+  padding: 1rem 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+}

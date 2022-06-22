@@ -1,15 +1,15 @@
-import '../styles/pages/register.scss'
+import '../../styles/pages/register.scss'
 import {Link} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-import {projectAuth} from '../firebase/config'
-import { useAuthContext } from '../hooks/useAuthContext'
+
+import {projectAuth} from '../../firebase/config'
+import { useAuthContext } from '../../hooks/useAuthContext'
 
 
-export default function Signup() {
+export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [name, setName] = useState('')
 
   const [error, setError] = useState('')
   const [loading, setLoading] = useState('')
@@ -19,30 +19,27 @@ export default function Signup() {
   // Handle login event
   const {dispatch} = useAuthContext()
 
-  const signup = async (email, password, name) => {
+  const login = async (email, password, name) => {
     setLoading(true)
     setError(null)
 
     try {
-      const newUser = await projectAuth.createUserWithEmailAndPassword(email, password)
-      console.log(newUser.user)
+      const logUser = await projectAuth.signInWithEmailAndPassword(email, password)
 
-      if (!newUser) {
-        throw new Error('Error creating user')
-      }
-
-      await newUser.user.updateProfile({displayName: name})
-      dispatch({type: 'SIGNUP', payload: newUser.user})
+      dispatch({type: 'LOGIN', payload: logUser.user})
       
       if(!cancel) {
+        console.log('this is me the baddest')
         setLoading(false)
         setError(null)
       }
     } 
     catch (error) {
-      console.log(error)
-      setLoading(false)
-      setError(error.message)
+      if (!cancel) {
+        console.log(error)
+        setLoading(false)
+        setError(error.message)
+      }
     }
   }
 
@@ -52,36 +49,26 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(email, password, name)
+    console.log(email, password)
 
-    signup(email, password, name)
+    login(email, password)
   }
-
 
   return (
     <div className='form-wrapper'>
       <div className='form'>
-        <Link to='/' className='logo'><h1>Halo Task</h1></Link>
-        <p className='form-type'>Register</p>
+      <Link to='/' className='logo'><h1>Halo Task</h1></Link>
+        <p className='form-type'>Login</p>
 
         {error && <p className='error'>{error}</p>}
 
         <form onSubmit={handleSubmit}>
           <label>
-            <span>Name</span>
-            <input 
-              type="text"
-              onChange={(e) => setName(e.target.value)} 
-              value={name}
-            />
-          </label>
-
-          <label>
             <span>Email</span>
             <input 
               type="email" 
-              onChange={(e) => setEmail(e.target.value)}
               value={email}
+              onChange={e => setEmail(e.target.value)}
             />
           </label>
 
@@ -89,20 +76,17 @@ export default function Signup() {
             <span>Password</span>
             <input 
               type="password" 
-              onChange={(e) => setPassword(e.target.value)}
               value={password}
+              onChange={e => setPassword(e.target.value)}
             />
           </label>
 
           {!loading && <input type="submit" value="Submit" />}
           {loading && <input type="submit" disabled value="Loading..." />}
 
-          <p className='prompt'>Already a user? <Link to='/login'>Login</Link> </p>
+          <p className='prompt'>Not a user? <Link to='/signup'>Sign Up</Link> </p>
         </form>
-
-        {loading && <p className='loading'>Loading...</p>}
       </div>
-
     </div>
   )
 }

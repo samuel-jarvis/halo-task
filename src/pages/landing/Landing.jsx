@@ -1,9 +1,9 @@
-import '../styles/pages/landing.scss'
-import hero from '../assets/hero.png'
+import '../../styles/pages/landing.scss'
+import hero from '../../assets/hero.png'
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import { useAuthContext } from '../hooks/useAuthContext'
+import { useAuthContext } from '../../hooks/useAuthContext'
 
 
 export default function Landing() {

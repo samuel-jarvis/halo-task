@@ -4,8 +4,8 @@
   
   min-height: 100vh;
   height: 100%;
-  // background-color: aquamarine;
-  width: 250px;
+  background-color: $primary;
+  width: 300px;
   border-right: 1px solid #adaaaa;
 
   .content {
@@ -19,18 +19,36 @@
     flex-direction: column;
 
     a {
-      color: black;
+      color: white;
       text-decoration: none;
-      font-size: 2rem;
       display: inline-block;
       padding: 1rem;
     }
   }
 
+  .head-link {
+    font-weight: bold;
+    // border-top: 1px solid #d2d0d0;
+    border-bottom: 1px solid #636161;
+    margin: 2rem 0;
+    font-size: 2rem;
+  }
+
+  .sub-link {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+
   .logo {
     font-size: 4rem;
     margin: 5rem 0;
-    color: $primary;
+    color: $secondary;
     font-weight: bold;
   }
+}
+
+svg {
+  color: $secondary;
+  font-size: 1.6rem;
 }

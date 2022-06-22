@@ -1,0 +1,117 @@
+@import '../variables.scss';
+
+.task-wrapper {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 4rem 0 ;
+  grid-gap: 4rem;
+
+
+  .task {
+    padding: 2rem;
+    // background-color: rgb(204, 229, 237);
+    color: black;
+    border: 2px solid #5f6965;
+    border-radius: 5px;
+    position: relative;
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: $green;
+    }
+    
+    &_time {
+      color: $primary;
+      font-size: 1.6rem;
+      padding: .5rem 0;
+    }
+
+    &_description {
+      font-size: 2rem;
+      padding: .5rem 0;
+      font-weight: bold;
+      columns: $primary;
+    }
+
+    &_extra {
+      font-size: 1.4rem;
+      padding: .5rem 0;
+    }
+
+    &_information {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.4rem;
+      margin: 1rem 0;
+      color: grey;
+    }
+
+    button {
+      // background-color: $primary;
+      border: 1px solid $secondary;
+      color: $primary;
+      border-radius: 35px;
+      padding: .8rem 1rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+    }
+
+    .completed-btn {
+      background-color: $secondary;
+      color: white;
+    }
+  }
+
+  .delete {
+    position: absolute;
+    top: 0;
+    top: 1rem;
+    right: 1rem;
+    color: rgb(156, 154, 154);
+    font-size: 1.6rem;
+  }
+
+}
+
+.align-right {
+  text-align: right;
+}
+
+.task-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.task-status {
+  font-size: 3rem;
+}
+
+.add-btn {
+  background-color: $secondary;
+  font-size: 1.6rem;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: auto;
+  border: none;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.task.pending {
+  border: 2px solid rgb(205, 127, 127);
+  // background-color: rgb(241, 233, 233);
+}
+
+.fa-today {
+  color: $primary;
+  font-size: 1.2rem;
+}

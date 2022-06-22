@@ -1,8 +1,8 @@
-import '../styles/pages/dashboard.scss'
+import '../../styles/pages/dashboard.scss'
 
 import {Outlet} from 'react-router-dom'
-import Navbar from '../components/Navbar'
-import Sidebar from '../components/Sidebar'
+import Navbar from '../../components/UI/Navbar'
+import Sidebar from '../../components/UI/Sidebar'
 
 
 export default function Dashboard() {
@@ -15,6 +15,7 @@ export default function Dashboard() {
         
         <Outlet />
       </div>
+      
     </main>
   )
 }
