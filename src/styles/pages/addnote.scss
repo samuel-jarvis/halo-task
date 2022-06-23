@@ -1,0 +1,48 @@
+@import '../variables.scss';
+
+.add-task {
+  padding: 1rem;
+  background-color: #E0F7FA;
+  border-radius: 10px;
+
+  input  {
+    background-color: transparent;
+    color: black;
+    border: none;
+    outline: none;
+    font-weight: bold;
+
+    &::placeholder {
+      color: rgb(199, 192, 192);
+    }
+  }
+
+  .input--title {
+    border-bottom: 1px solid $primary;
+    margin-bottom: 1rem;
+  }
+  
+  textarea {
+    background-color: transparent;
+    width: 100%;
+    font: inherit;
+    font-size: 1.6rem;
+    color: black;
+    border: none;
+    outline: none;
+    line-height: 1.4;
+  }
+}
+
+
+.select-color {
+  display: flex;
+}
+
+.note-color {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 1px solid #c7d2d3;
+}
