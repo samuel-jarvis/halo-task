@@ -13,9 +13,11 @@ export default function Dashboard() {
   }
 
   const hideSidebar = (e) => {
-    if (e.target.classList.contains('wrapper-overlay')) {
-      setShowSidebar(false)
-    }
+    // if (e.target.classList.contains('wrapper-overlay')) {
+      setTimeout(() => {
+        setShowSidebar(false)
+      } , 300)  
+    // }
   }
 
 

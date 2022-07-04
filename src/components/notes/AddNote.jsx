@@ -1,13 +1,13 @@
 import { useState, useRef } from 'react'
 import React from 'react'
 import '../../styles/pages/addnote.scss'
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaPlus } from "react-icons/fa";
 import { projectFirestore } from '../../firebase/config'
 import { useAuthContext } from '../../hooks/useAuthContext'
 
 
 
-const noteColor = ["#FFFFFF", '#E0F7FA', '#B2DFDB', '#FFCCBC', '#CFD8DC'];
+const noteColor = ["#FFFFFF", '#E0F7FA', '#B2DFDB', '#FFCCBC'];
 
 
 export default function AddNote() {
@@ -53,7 +53,7 @@ export default function AddNote() {
           ref={filledtitle}
         />
 
-        <textarea name="" id="" cols="20" rows="5"
+        <textarea name="" id="" cols="20" rows="3"
           value={note}
           onChange={(e) => setNote(e.target.value)}
         ></textarea>
@@ -73,8 +73,8 @@ export default function AddNote() {
           </div>
 
           <div className="submit-btn" onClick={addTask}>
-            <FaCheck className='submit-icon'/>
-            Add Note
+            <FaPlus className='submit-icon'/>
+            Note
           </div>
 
         </div>

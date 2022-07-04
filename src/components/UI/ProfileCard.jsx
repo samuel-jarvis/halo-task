@@ -1,12 +1,31 @@
 import React from 'react'
 import '../../styles/components/profilecard.scss'
 import {FaSignOutAlt, FaSmileWink} from "react-icons/fa";
+import {projectAuth} from '../../firebase/config'
+import { useAuthContext } from '../../hooks/useAuthContext'
+import { useNavigate } from "react-router-dom";
+
+
 
 
 export default function ProfileCard({user, show}) {
+  const {dispatch} = useAuthContext()
+  const navigate = useNavigate();
+
   // if(!show) {
   //   return null
   // }
+
+  const logout = async () => {
+    try {
+      console.log('first')
+      await projectAuth.signOut()
+      dispatch({type: 'LOGIN'})
+      navigate("/")
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div className='profile-card'>
@@ -20,7 +39,7 @@ export default function ProfileCard({user, show}) {
 
         <div className='logout-link'>
           <FaSignOutAlt />
-          <a href="#">Logout</a>
+          <button className='button' onClick={logout}>Logout</button>
         </div>
       </div>
     </div>

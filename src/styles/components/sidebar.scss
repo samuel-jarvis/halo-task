@@ -58,7 +58,7 @@
 @media screen and (max-width: 800px){
   .wrapper-overlay {
     background-color: #63616176;
-    position: absolute;
+    position: fixed;
     z-index: 60;
     width: 100%;
     top: 0;

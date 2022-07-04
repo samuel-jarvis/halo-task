@@ -32,7 +32,7 @@ export default function Landing() {
         <div className="hero__content">
           <h1 className="hero__title">A New Way to Track Tasks and take notes</h1>
           <p className="hero__subtitle">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas possimus autem corporis a odit.
+            Halo_Task is a simple task tracking app that allows you to track your tasks and notes. 
            </p>
           <Link to='/signup' className='btn--main'>Get Started</Link>
         </div>
@@ -43,7 +43,9 @@ export default function Landing() {
       </div>  
 
       <footer className="footer px">
-        Created with <span className="heart">&hearts;</span> by <a href="/" className="footer__link">Samuel Jarvis Adeyemi</a>
+        <p>
+          Created with <span className="heart">&hearts;</span> by <a href="https://github.com/samuel-jarvis" className="footer__link">Samuel Jarvis Adeyemi</a>
+        </p>
       </footer>
 
     </div>

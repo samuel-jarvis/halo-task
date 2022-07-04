@@ -25,7 +25,7 @@
   display: flex;
   justify-self: space-between;
   align-items: center;
-  min-height: 60vh;
+  min-height: 70vh;
 
   &__title {
     font-size: 6rem;
@@ -51,7 +51,17 @@
 
 .footer {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  margin-top: auto;
+  font-size: 1.2rem;
+
+    bottom: 2rem;
+    position: absolute;
+
+    a {
+      color: $secondary
+    }
 }
 
 @media screen and (max-width: 800px){
@@ -75,8 +85,7 @@
 @media screen and (max-width: 400px){
   .hero {
     flex-direction: column-reverse;
-    padding: 0 4rem;
-
+    
     &__title {
       font-size: 4rem;
       font-weight: bold;
@@ -86,10 +95,16 @@
   }
 
   .nav {
+    padding-left: 2rem;
+    padding-right: 2rem;
 
     .username {
       display: none;
     }
+  }
 
+  .footer {
+    margin-top: 6rem;
+    position: static;
   }
 }
