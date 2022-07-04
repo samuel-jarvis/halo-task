@@ -1,7 +1,7 @@
 import '../../styles/pages/register.scss'
 import {Link} from 'react-router-dom'
 import { useEffect, useState } from 'react'
-
+import { useNavigate } from "react-router-dom";
 
 import {projectAuth} from '../../firebase/config'
 import { useAuthContext } from '../../hooks/useAuthContext'
@@ -15,7 +15,7 @@ export default function Login() {
   const [loading, setLoading] = useState('')
 
   const [cancel, setCancel] = useState(false)
-  
+  const navigate = useNavigate();
   // Handle login event
   const {dispatch} = useAuthContext()
 
@@ -25,11 +25,10 @@ export default function Login() {
 
     try {
       const logUser = await projectAuth.signInWithEmailAndPassword(email, password)
-
       dispatch({type: 'LOGIN', payload: logUser.user})
+      navigate("/dashboard")
       
       if(!cancel) {
-        console.log('this is me the baddest')
         setLoading(false)
         setError(null)
       }
@@ -55,7 +54,7 @@ export default function Login() {
   }
 
   return (
-    <div className='form-wrapper'>
+    <div className='auth-form-wrapper'>
       <div className='form'>
       <Link to='/' className='logo'><h1>Halo Task</h1></Link>
         <p className='form-type'>Login</p>

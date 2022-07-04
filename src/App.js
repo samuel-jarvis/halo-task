@@ -15,6 +15,7 @@ import AddTask from './components/tasks/AddTask';
 import TodayTask from './pages/dashboard/tasks/TodayTask';
 import CompletedTask from './pages/dashboard/tasks/CompletedTask';
 import PendingTasks from './pages/dashboard/tasks/PendingTasks';
+import ImportantNotes from './pages/dashboard/notes/ImportantNotes';
 
 function App() {
   const {user} = useAuthContext();
@@ -33,6 +34,8 @@ function App() {
             <Route path='todaytask' element={<TodayTask />}/>
             <Route path='completedtask' element={<CompletedTask />}/>
             <Route path='pendingtask' element={<PendingTasks />}/>
+            <Route path='importantnotes' element={<ImportantNotes />}/>
+
           </Route>
 
         </Routes>

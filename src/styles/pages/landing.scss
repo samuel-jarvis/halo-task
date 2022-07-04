@@ -53,3 +53,43 @@
   text-align: center;
   margin-top: 2rem;
 }
+
+@media screen and (max-width: 800px){
+  .hero {
+    flex-direction: column-reverse;
+
+    &__subtitle {
+      font-size: 1.6rem;
+    }
+
+    &__title {
+      font-size: 4rem;
+      font-weight: bold;
+      color: $primary;
+    }
+  }
+
+ 
+}
+
+@media screen and (max-width: 400px){
+  .hero {
+    flex-direction: column-reverse;
+    padding: 0 4rem;
+
+    &__title {
+      font-size: 4rem;
+      font-weight: bold;
+      color: $primary;
+    }
+    
+  }
+
+  .nav {
+
+    .username {
+      display: none;
+    }
+
+  }
+}

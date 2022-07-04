@@ -47,8 +47,8 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  // font-family: 'Questrial', sans-serif; 
-  font-family: 'Mulish', sans-serif;
+  font-family: 'Questrial', sans-serif; 
+  // font-family: 'Mulish', sans-serif;
   background-color: #ECF0F1;
 }
 
@@ -89,4 +89,18 @@ body {
 .px {
   padding-left: 8rem;
   padding-right: 8rem;
+}
+
+@media  screen and (max-width: 800px) {
+  .px {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .px {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  }
 }

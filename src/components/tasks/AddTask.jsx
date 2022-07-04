@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { projectFirestore } from '../../firebase/config'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import '../../styles/pages/addtask.scss'
+import { useNavigate } from "react-router-dom";
 
 export default function AddTask() {
   const [task, setTask] = useState('')
@@ -11,6 +12,7 @@ export default function AddTask() {
   const [today, setToday] = useState(false)
 
   const {user} = useAuthContext();
+  const navigate = useNavigate();
 
 
   // state for erroe and handling useeffect
@@ -20,9 +22,10 @@ export default function AddTask() {
   // array of tasks data to pass in to the database
   const data = {task, description, date, today, user: user.uid, completed: false}
 
-  const addDocument = (data) => {
+  const addDocument = async (data) => {
     try {
-      projectFirestore.collection('tasks').add(data)
+      await projectFirestore.collection('tasks').add(data)
+      navigate("/dashboard")
     } catch (error) {
       setError('Error adding document')
       console.log(error)
@@ -35,7 +38,7 @@ export default function AddTask() {
   }
 
   return (
-    <div className='form-wrapper'>
+    <div className='form-wrapper task-form'>
       <h1>Add Task</h1>
       <form action="" onSubmit={handleSubmit}>
         <div className="form-group">
@@ -74,7 +77,7 @@ export default function AddTask() {
         </div>
 
         <div className="form-group form-group--flex">
-          <label htmlFor="">Today</label>
+          <label htmlFor="">Important</label>
           <input 
             type="checkbox" 
             id="task-today"

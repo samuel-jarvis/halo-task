@@ -5,8 +5,11 @@
   min-height: 100vh;
   height: 100%;
   background-color: $primary;
-  width: 300px;
+  width: 280px;
   border-right: 1px solid #adaaaa;
+  position: fixed;
+  z-index: 200;
+
 
   .content {
     padding-left: 2rem;
@@ -46,9 +49,28 @@
     color: $secondary;
     font-weight: bold;
   }
+  svg {
+    color: $secondary;
+    font-size: 1.6rem;
+  }
 }
 
-svg {
-  color: $secondary;
-  font-size: 1.6rem;
+@media screen and (max-width: 800px){
+  .wrapper-overlay {
+    background-color: #63616176;
+    position: absolute;
+    z-index: 60;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    display: none;
+  }
+
+  .showSidebar {
+    display: block;
+  
+  }  
+
 }
+
+

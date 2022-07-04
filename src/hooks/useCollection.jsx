@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react"
 import { projectFirestore } from "../firebase/config"
+import { useAuthContext } from './useAuthContext'
+
 
 export const useCollection = (collection, group) => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+  const {user} = useAuthContext()
+
 
   useEffect(() => {
-    let query = projectFirestore.collection(collection)
+    let query = projectFirestore.collection(collection).where("user", "==", user.uid)
 
     if (group) {
       query = query.where(...group)

@@ -10,4 +10,12 @@
   margin: 2rem 0;
   margin-bottom: 4rem;
   border-bottom: 1px solid $border;
+  position: relative;
+
+  .profile-btn {
+    display: flex;
+    .dropdown {
+      margin-left: 1rem;
+    }
+  }
 }

@@ -1,80 +1,11 @@
 @import '../variables.scss';
 
-.task-wrapper {
+.note-wrapper {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 4rem 0 ;
   grid-gap: 4rem;
-
-
-  .task {
-    padding: 2rem;
-    // background-color: rgb(204, 229, 237);
-    color: black;
-    border: 2px solid #5f6965;
-    border-radius: 5px;
-    position: relative;
-
-    h3 {
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: $green;
-    }
-    
-    &_time {
-      color: $primary;
-      font-size: 1.6rem;
-      padding: .5rem 0;
-    }
-
-    &_description {
-      font-size: 2rem;
-      padding: .5rem 0;
-      font-weight: bold;
-      columns: $primary;
-    }
-
-    &_extra {
-      font-size: 1.4rem;
-      padding: .5rem 0;
-    }
-
-    &_information {
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.4rem;
-      margin: 1rem 0;
-      color: grey;
-    }
-
-    button {
-      // background-color: $primary;
-      border: 1px solid $secondary;
-      color: $primary;
-      border-radius: 35px;
-      padding: .8rem 1rem;
-      font-size: 1.4rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all .3s ease-in-out;
-    }
-
-    .completed-btn {
-      background-color: $secondary;
-      color: white;
-    }
-  }
-
-  .delete {
-    position: absolute;
-    top: 0;
-    top: 1rem;
-    right: 1rem;
-    color: rgb(156, 154, 154);
-    font-size: 1.6rem;
-  }
 
 }
 
@@ -106,10 +37,6 @@
   text-decoration: none;
 }
 
-.task.pending {
-  border: 2px solid rgb(205, 127, 127);
-  // background-color: rgb(241, 233, 233);
-}
 
 .fa-today {
   color: $primary;
@@ -120,8 +47,71 @@
   display: flex;
 }
 
-.note-color {
-  height: 10px;
-  width: 10px ;
+// Single Note styling that I would've easily put in another scss file
+.single-note {
+  padding: 3rem;
+  font-size: 1.7rem;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  
+  .note_title {
+    font-weight: bolder;
+    border-bottom: 1px solid rgb(44 62 80);
+    margin-bottom: 1rem;
+    color: black;
+    font-size: 1.8rem;
+  }
+
+  .note_description {
+    font-size: 1.8rem;
+  }
+
+  .note_time {
+    font-size: 1.2rem;
+    color: grey;
+  }
+  
+  .note_extra {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
 }
 
+.note_star {
+  color: $primary;
+}
+
+.fa-delete-note {
+  font-size: 1.8rem;
+  color: grey;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+}
+
+
+@media screen and (max-width: 1000px){
+  
+  .note-wrapper {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem 0 ;
+    grid-gap: 4rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+  
+  .note-wrapper {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    padding: 4rem 0 ;
+    grid-gap: 2rem;
+  }
+}

@@ -15,6 +15,7 @@ export default function CompletedTask() {
 
       <div className='task-wrapper'>
         <TaskList tasks={data}/>
+        {!data && <p className='no-task'>No Completed Tasks</p>}
       </div>
     </>
   )

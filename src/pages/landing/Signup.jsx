@@ -1,6 +1,7 @@
 import '../../styles/pages/register.scss'
 import {Link} from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
 import {projectAuth} from '../../firebase/config'
 import { useAuthContext } from '../../hooks/useAuthContext'
@@ -15,6 +16,8 @@ export default function Signup() {
   const [loading, setLoading] = useState('')
 
   const [cancel, setCancel] = useState(false)
+
+  const navigate = useNavigate();
   
   // Handle login event
   const {dispatch} = useAuthContext()
@@ -33,6 +36,8 @@ export default function Signup() {
 
       await newUser.user.updateProfile({displayName: name})
       dispatch({type: 'SIGNUP', payload: newUser.user})
+
+      navigate("/dashboard")
       
       if(!cancel) {
         setLoading(false)
@@ -59,7 +64,7 @@ export default function Signup() {
 
 
   return (
-    <div className='form-wrapper'>
+    <div className='auth-form-wrapper'>
       <div className='form'>
         <Link to='/' className='logo'><h1>Halo Task</h1></Link>
         <p className='form-type'>Register</p>

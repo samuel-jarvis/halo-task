@@ -10,11 +10,14 @@
 
   .task {
     padding: 2rem;
-    // background-color: rgb(204, 229, 237);
     color: black;
-    border: 2px solid #5f6965;
+    border-left: 3px solid #5f6965;
     border-radius: 5px;
     position: relative;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+
 
     h3 {
       font-size: 1.8rem;
@@ -107,11 +110,33 @@
 }
 
 .task.pending {
-  border: 2px solid rgb(205, 127, 127);
+  border-left: 3px solid rgb(205, 127, 127);
   // background-color: rgb(241, 233, 233);
 }
 
 .fa-today {
   color: $primary;
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1000px){
+  
+  .task-wrapper {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem 0 ;
+    grid-gap: 4rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+  
+  .task-wrapper {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    padding: 4rem 0 ;
+    grid-gap: 2rem;
+  }
 }

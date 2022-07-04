@@ -5,13 +5,11 @@ import { FaTimes, FaRegBell } from "react-icons/fa";
 
 export default function TaskList({tasks}) {
   const completedTask = (id) => {
-    console.log('hello world')
     projectFirestore.collection('tasks').doc(id)
       .update({completed: true})
   }
 
   const uncompletedTask = (id) => {
-    console.log('hello world')
     projectFirestore.collection('tasks').doc(id)
       .update({completed: false})
   }

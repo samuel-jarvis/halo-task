@@ -6,5 +6,15 @@
   .section {
     flex: 1;
     padding: 0 4rem;
+    margin-left: 280px;
   }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    .section {
+      margin-left: 0px;
+    }
+  }
+
 }

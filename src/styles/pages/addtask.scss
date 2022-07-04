@@ -5,6 +5,7 @@
   margin-top: 4rem;
   padding: 2rem 4rem;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 
   .form-group {
     margin-bottom: 1.5rem;
@@ -52,4 +53,8 @@ input[type=submit] {
   font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+.task-form {
+  border-top: 3px solid $secondary;
 }

@@ -1,11 +1,9 @@
 @import '../variables.scss';
 
-.form-wrapper {
+.auth-form-wrapper {
   display: grid;
   align-items: center;
 }
-
-
 
 .form-type {
   color: $secondary;
@@ -17,7 +15,7 @@
 .form {
   max-width: 450px;
   background-color: white;
-  margin: 3rem auto;
+  margin: 6rem auto;
   padding: 2rem 4rem;
   width: 90vw;
   border-top: 5px solid $secondary;

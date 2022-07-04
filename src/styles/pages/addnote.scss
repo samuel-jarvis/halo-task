@@ -1,9 +1,10 @@
 @import '../variables.scss';
 
 .add-task {
-  padding: 1rem;
+  padding: 2rem;
   background-color: #E0F7FA;
   border-radius: 10px;
+  transition: background-color .5s ease-in-out;
 
   input  {
     background-color: transparent;
@@ -20,6 +21,7 @@
   .input--title {
     border-bottom: 1px solid $primary;
     margin-bottom: 1rem;
+    font-size: 1.8rem;
   }
   
   textarea {
@@ -31,6 +33,30 @@
     border: none;
     outline: none;
     line-height: 1.4;
+    resize: none;
+    margin-bottom: 3rem;
+    line-height: 1.4;
+    overflow: auto;
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    background: $primary  ;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 }
 
@@ -44,5 +70,30 @@
   width: 18px;
   border-radius: 50%;
   margin-right: 8px;
-  border: 1px solid #c7d2d3;
+  border: 1px solid #a9b7b7;
 }
+
+.note_extra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  border: 2px solid $secondary;
+  border-radius: 30px;
+  padding: 8px 15px;
+  font-size: 1.6rem;
+  color: $primary;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-icon {
+  font-size: 1.4rem;
+  margin-right: .5rem;
+  color: $primary;
+}
+

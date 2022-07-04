@@ -1,14 +1,13 @@
-import TaskList from '../../../components/tasks/TaskList'
 import { useCollection } from '../../../hooks/useCollection'
-import '../../../styles/pages/tasks.scss'
+import '../../../styles/pages/notes.scss'
+import NoteList from  '../../../components/notes/NoteList'
 
-
-import React from 'react'
 import AddNote from '../../../components/notes/AddNote'
 
 export default function NotesList() {
-  const { data, loading } = useCollection('tasks', ['today', '==', true])
+  const { data } = useCollection('notes')
   var taskaAmount = data.length
+
 
   return (
     <>
@@ -16,9 +15,9 @@ export default function NotesList() {
         <p className='task-status'>You Have {taskaAmount} Notes</p>
       </div>
 
-      <div className='task-wrapper'>
+      <div className='note-wrapper'>
         <AddNote />
-        <TaskList tasks={data}/>
+        <NoteList notes={data}/>
       </div>
     </>
   )

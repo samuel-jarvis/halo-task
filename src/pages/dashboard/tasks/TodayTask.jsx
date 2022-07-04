@@ -10,7 +10,7 @@ export default function TodayTask() {
   return (
     <>
      <div className='task-details'>
-        <p className='task-status'>You Have {taskaAmount} Tasks Today</p>
+        <p className='task-status'>You Have {taskaAmount} Important Tasks</p>
       </div>
 
       <div className='task-wrapper'>
