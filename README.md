@@ -6,7 +6,7 @@ A React Js project that allows user to organize tasks and take notes in a simple
 
 ## Screenshot of Dashboard
 
-![](./screenshot.png
+![](./screenshot.png)
 
 ## Tech Used
 * React Js V18
