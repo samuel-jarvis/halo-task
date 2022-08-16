@@ -6,7 +6,6 @@ import {FaBars, FaCaretDown} from "react-icons/fa";
 import ProfileCard from './ProfileCard';
 
 
-
 export default function Navbar({toggleSidebar}) {
   const {user} = useAuthContext()
 

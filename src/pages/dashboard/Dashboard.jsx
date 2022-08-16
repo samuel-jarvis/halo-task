@@ -17,7 +17,7 @@ export default function Dashboard() {
       setTimeout(() => {
         setShowSidebar(false)
       } , 300)  
-    // }
+    // }`
   }
 
 
