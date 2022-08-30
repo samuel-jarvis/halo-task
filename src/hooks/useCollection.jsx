@@ -26,7 +26,7 @@ export const useCollection = (collection, group) => {
       setData(results)
       setLoading(false)
     }, (error) => {
-      console.log(error)
+      //console.log(error)
       setError(error)
     })
 

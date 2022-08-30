@@ -28,7 +28,7 @@ export default function AddTask() {
       navigate("/dashboard")
     } catch (error) {
       setError('Error adding document')
-      console.log(error)
+      //console.log(error)
     }
   }
 

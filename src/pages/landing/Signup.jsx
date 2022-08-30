@@ -28,7 +28,7 @@ export default function Signup() {
 
     try {
       const newUser = await projectAuth.createUserWithEmailAndPassword(email, password)
-      console.log(newUser.user)
+      //console.log(newUser.user)
 
       if (!newUser) {
         throw new Error('Error creating user')
@@ -45,7 +45,7 @@ export default function Signup() {
       }
     } 
     catch (error) {
-      console.log(error)
+      //console.log(error)
       setLoading(false)
       setError(error.message)
     }
@@ -57,7 +57,7 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(email, password, name)
+    //console.log(email, password, name)
 
     signup(email, password, name)
   }

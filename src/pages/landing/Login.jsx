@@ -35,7 +35,7 @@ export default function Login() {
     } 
     catch (error) {
       if (!cancel) {
-        console.log(error)
+        //console.log(error)
         setLoading(false)
         setError(error.message)
       }
@@ -48,7 +48,7 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(email, password)
+    //console.log(email, password)
 
     login(email, password)
   }

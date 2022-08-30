@@ -23,7 +23,7 @@ export default function AddNote() {
   const data = {title, note, newNoteColor, time, important: false, user: user.uid}
   
   const addTask = async () => {
-    console.log(data)
+    //console.log(data)
 
     if(!title && !note) {
       alert('Please enter a title and note')
@@ -36,7 +36,7 @@ export default function AddNote() {
       setTitle('')
       setNote('')
     } catch (error) {
-      console.log(error)
+      //console.log(error)
     }
   }
 

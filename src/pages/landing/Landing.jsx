@@ -8,7 +8,7 @@ import { useAuthContext } from '../../hooks/useAuthContext'
 
 export default function Landing() {
   const {user} = useAuthContext()
-  console.log(user)
+  //console.log(user)
 
   return (
     <div>

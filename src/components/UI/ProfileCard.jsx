@@ -18,12 +18,12 @@ export default function ProfileCard({user, show}) {
 
   const logout = async () => {
     try {
-      console.log('first')
+      //console.log('first')
       await projectAuth.signOut()
       dispatch({type: 'LOGIN'})
       navigate("/")
     } catch (error) {
-      console.log(error)
+      //console.log(error)
     }
   }
 
